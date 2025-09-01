@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Narendra</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <div id="navbar" class="z-50 fixed top-6 left-6 md:left-12 flex justify-start"></div>
+
+  <!-- Hero Section -->
+  <main id="hero" class="mt-36 scroll-mt-28">
+    <div id="hero-content"></div>
+  </main>
+
+  <!-- About Section -->
+  <section id="about" class="mt-20 scroll-mt-28">
+    <div id="about-content"></div>
+  </section>
+
+  <!-- Project Section -->
+  <section id="project" class="mt-20 scroll-mt-28">
+    <div id="project-content"></div>
+  </section>
+
+  <!-- Journey / Timeline Section -->
+  <section id="journey" class="mt-20 scroll-mt-28">
+    <div id="journey-content"></div>
+  </section>
+
+  <!-- awards section -->
+  <section id="awards" class="mt-20 scroll-mt-28">
+    <div id="awards-content"></div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="mt-20 scroll-mt-28">
+    <div id="skills-content"></div>
+  </section>
+
+  <!-- Footer -->
+  <section id="footer" class="mt-20 scroll-mt-28">
+    <div id="footer-content"></div>
+  </section>
+
+  <!-- Load External Components -->
+  <script>
+    // Navbar
+    fetch("navbar.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("navbar").innerHTML = data);
+
+    // Hero
+    fetch("hero.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("hero-content").innerHTML = data;
+
+        // Typing effect
+        const text = "Narendra Fatin Fahrezi";
+        const typedText = document.getElementById("typed-text");
+        const cursor = document.getElementById("cursor");
+
+        let index = 0;
+        let isDeleting = false;
+
+        function type() {
+          if (!isDeleting) {
+            typedText.textContent = text.substring(0, index + 1);
+            index++;
+            if (index === text.length) {
+              isDeleting = true;
+              setTimeout(type, 1500);
+              return;
+            }
+          } else {
+            typedText.textContent = text.substring(0, index - 1);
+            index--;
+            if (index === 0) {
+              isDeleting = false;
+            }
+          }
+          setTimeout(type, isDeleting ? 80 : 120);
+        }
+
+        // Cursor blink
+        setInterval(() => {
+          if (cursor) {
+            cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+          }
+        }, 500);
+
+        type();
+      });
+
+    // About Section
+    fetch("about.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("about-content").innerHTML = data);
+
+    // Project Section
+    fetch("project.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("project-content").innerHTML = data);
+
+    // Journey Section
+    fetch("journey.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("journey-content").innerHTML = data);
+
+    // awards Section
+    fetch("awards.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("awards-content").innerHTML = data);
+
+    // Skills Section
+    fetch("skills.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("skills-content").innerHTML = data);
+
+    // Footer section
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer-content").innerHTML = data);
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      offset: 100,
+    });
+  </script>
+
+</body>
+</html>
