@@ -1,43 +1,118 @@
-<!-- Awards Section -->
-<section class="py-24 px-6 font-[Poppins] bg-white max-w-6xl mx-auto" id="awards">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl md:text-4xl font-semibold text-gray-900">Penghargaan</h2>
-    <p class="text-sm text-gray-600 mt-2">Beberapa penghargaan yang saya dapatkan</p>
-  </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Awards Section -->
+    <section class="py-24 px-6 font-[Poppins] bg-white max-w-6xl mx-auto" id="awards">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-semibold text-gray-900">Penghargaan</h2>
+        <p class="text-sm text-gray-600 mt-2">Beberapa penghargaan yang saya dapatkan</p>
+      </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
+        <!-- Award Card 1 -->
+        <div onclick="openModal('award1')" class="cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition w-full max-w-sm" data-aos="fade-up">
+          <div class="h-64 w-full">
+            <img src="/assets/img/hero2.svg" alt="Juara Favorit UI/UX" class="object-cover w-full h-full" />
+          </div>
+          <div class="p-4 h-20 flex items-center">
+            <p class="text-sm text-gray-700 line-clamp-3">Juara Favorit Tingkat SMK/SMA Kompetisi UI/UX Solo Tecnopark 2025</p>
+          </div>
+        </div>
 
-    <!-- Award 1 -->
-    <div class="rounded-xl overflow-hidden shadow-md" data-aos="fade-up">
-      <img src="/assets/img/hero2.svg" alt="Juara Favorit UI/UX" class="object-cover w-full h-64" />
-      <div class="p-4">
-        <p class="text-sm text-gray-700 mt-2">Juara Favorit  Tingkat SMK/SMA  Kompetisi UI/UX Solo Tecnopark 2025</p>
+        <!-- Award Card 2 -->
+        <div onclick="openModal('award2')" class="cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition w-full max-w-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-64 w-full">
+            <img src="/assets/img/basket.svg" alt="Juara Basket" class="object-cover w-full h-full" />
+          </div>
+          <div class="p-4 h-20 flex items-center">
+            <p class="text-sm text-gray-700 line-clamp-3">Juara 3 Kejuaraan Basket event Kejurkot</p>
+          </div>
+        </div>
+
+        <!-- Award Card 3 -->
+        <div onclick="openModal('award3')" class="cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition w-full max-w-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-64 w-full">
+            <img src="/assets/img/sertifsolo.svg" alt="Sertifikat IDCamp" class="object-cover w-full h-full" />
+          </div>
+          <div class="p-4 h-20 flex items-center">
+            <p class="text-sm text-gray-700 line-clamp-3">Sertifikat Kehadiran untuk event [Offline] IDCamp Connect Roadshow Solo</p>
+          </div>
+        </div>
+
+        <!-- Award Card 4 -->
+        <div onclick="openModal('award4')" class="cursor-pointer rounded-xl overflow-hidden shadow-md hover:shadow-lg transition w-full max-w-sm" data-aos="fade-up" data-aos-delay="300">
+          <div class="h-64 w-full">
+            <img src="/assets/img/sertifjogja.svg" alt="Sertifikat Baparekraf" class="object-cover w-full h-full" />
+          </div>
+          <div class="p-4 h-20 flex items-center">
+            <p class="text-sm text-gray-700 line-clamp-3">Sertifikat Kehadiran untuk event [Offline] Baparekraf Developer Day 2024</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Template -->
+    <div id="award1" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-3">
+      <div class="bg-white rounded-md shadow-lg max-w-xs w-full p-3 relative">
+        <button onclick="closeModal('award1')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl leading-none bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-md">&times;</button>
+        <img src="/assets/img/sertifuiux.jpg" alt="Sertifikat lomba" class="rounded-md shadow mb-2 w-full">
+        <h3 class="text-sm font-semibold mb-1">Juara Favorit Kompetisi UI/UX Solo Tecnopark 2025</h3>
+        <p class="text-gray-600 text-[11px] leading-relaxed">Saya berhasil menjadi juara favorit pada kompetisi UI/UX tingkat SMK/SMA di Solo Tecnopark tahun 2025. Saya juga mendapatkan Sertifikat dan Medali</p>
       </div>
     </div>
 
-    <!-- Award 2 -->
-    <div class="rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
-      <img src="/assets/img/basket.svg" alt="Juara Basket" class="object-cover w-full h-64" />
-      <div class="p-4">
-        <p class="text-sm text-gray-700 mt-2">Juara 3 Kejuaran Basket event Kejurkot </p>
+    <div id="award2" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-3">
+      <div class="bg-white rounded-md shadow-lg max-w-xs w-full p-3 relative">
+        <button onclick="closeModal('award2')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl leading-none bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-md">&times;</button>
+        <img src="/assets/img/sertifbasket.jpg" alt="Foto sertifikat basket" class="rounded-md shadow mb-2 w-full">
+        <h3 class="text-sm font-semibold mb-1">Juara 3 Kejuaraan Basket Event Kejurkot</h3>
+        <p class="text-gray-600 text-[11px] leading-relaxed">Berhasil meraih juara 3 dalam event Kejurkot Basket Kota Surakarta 2025.</p>
       </div>
     </div>
 
-    <!-- Award 3 -->
-    <div class="rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
-      <img src="/assets/img/sertifsolo.svg" alt="Sertifikat Roadshow" class="object-cover w-full h-64" />
-      <div class="p-4">
-        <p class="text-sm text-gray-700 mt-2">Sertifikat Kehadiran untuk event [Offline] IDCamp Connect Roadshow Solo</p>
+    <div id="award3" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-3">
+      <div class="bg-white rounded-md shadow-lg max-w-xs w-full p-3 relative">
+        <button onclick="closeModal('award3')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl leading-none bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-md">&times;</button>
+        <img src="/assets/img/sertifsolo.svg" alt="Sertifikat lomba" class="rounded-md shadow mb-2 w-full">
+        <h3 class="text-sm font-semibold mb-1">Sertifikat Kehadiran untuk event [Offline] IDCamp Connect Roadshow Solo</h3>
+        <p class="text-gray-600 text-[11px] leading-relaxed">Saya mengikuti event IDCamp Connect dari Dicoding yang berada di solo</p>
       </div>
     </div>
 
-    <!-- Award 4 -->
-    <div class="rounded-xl overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
-      <img src="/assets/img/sertifjogja.svg" alt="Sertifikat Dev Day" class="object-cover w-full h-64" />
-      <div class="p-4">
-        <p class="text-sm text-gray-700 mt-2">Sertifikat Kehadiran untuk event [Offline] Baparekraf Developer Day 2024</p>
+    <div id="award4" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50 px-3">
+      <div class="bg-white rounded-md shadow-lg max-w-xs w-full p-3 relative">
+        <button onclick="closeModal('award4')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-xl leading-none bg-white rounded-full w-6 h-6 flex items-center justify-center shadow-md">&times;</button>
+        <img src="/assets/img/sertifjogja.svg" alt="Foto sertifikat basket" class="rounded-md shadow mb-2 w-full">
+        <h3 class="text-sm font-semibold mb-1">Sertifikat Kehadiran untuk event [Offline] Baparekraf Developer Day 2024</h3>
+        <p class="text-gray-600 text-[11px] leading-relaxed">Saya mengikuti event dari Baparekraf Developer Day 2024 yang berada di Jogja</p>
       </div>
     </div>
 
-  </div>
-</section>
+    <!-- Script Modal -->
+    <script>
+      function openModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+      }
+    </script>
+</body>
+</html>

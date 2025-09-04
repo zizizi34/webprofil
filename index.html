@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio - Narendra</title>
 
+  <link rel="icon" type="image/png" href="/assets/img/logo.svg" />
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -30,7 +32,7 @@
 <body class="bg-white text-gray-900 min-h-screen flex flex-col">
 
   <!-- Navbar -->
-  <div id="navbar" class="z-50 fixed top-6 left-6 md:left-12 flex justify-start"></div>
+  <div id="navbar" class="pointer-events-auto fixed top-6 left-6 md:left-12 z-50"></div>
 
   <!-- Hero Section -->
   <main id="hero" class="mt-36 scroll-mt-28">
@@ -52,7 +54,7 @@
     <div id="journey-content"></div>
   </section>
 
-  <!-- awards section -->
+  <!-- Awards Section -->
   <section id="awards" class="mt-20 scroll-mt-28">
     <div id="awards-content"></div>
   </section>
@@ -72,7 +74,19 @@
     // Navbar
     fetch("navbar.html")
       .then(res => res.text())
-      .then(data => document.getElementById("navbar").innerHTML = data);
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        // Event listener hamburger setelah navbar dimuat
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        if (btn && menu) {
+          btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+          });
+        }
+      });
 
     // Hero
     fetch("hero.html")
@@ -132,7 +146,7 @@
       .then(res => res.text())
       .then(data => document.getElementById("journey-content").innerHTML = data);
 
-    // awards Section
+    // Awards Section
     fetch("awards.html")
       .then(res => res.text())
       .then(data => document.getElementById("awards-content").innerHTML = data);
@@ -142,10 +156,27 @@
       .then(res => res.text())
       .then(data => document.getElementById("skills-content").innerHTML = data);
 
-    // Footer section
+    // Footer Section
     fetch("footer.html")
       .then(res => res.text())
       .then(data => document.getElementById("footer-content").innerHTML = data);
+  </script>
+
+  <!-- Modal Script (global, berlaku untuk awards.html juga) -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // Tutup modal jika klik di luar card (area gelap)
+    document.addEventListener("click", function(e) {
+      if (e.target.classList.contains("bg-black/60")) {
+        e.target.classList.add("hidden");
+      }
+    });
   </script>
 
   <!-- AOS Script -->
